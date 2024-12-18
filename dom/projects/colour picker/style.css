@@ -1,0 +1,46 @@
+html {
+  margin: 0;
+}
+
+span {
+  display: block;
+}
+.canvas {
+  margin: 100px auto 100px;
+  width: 80%;
+  text-align: center;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    border: solid black 2px;
+    display: inline-block;
+    margin: 10px; 
+    cursor: pointer; 
+    transition: transform 0.2s ease-in-out; 
+  }
+  
+  .button:hover {
+    transform: scale(1.1); 
+  }
+
+#grey {
+    background: #ccc; /* light grey */
+}
+  
+#white {
+    background: #fff;
+}
+  
+#blue {
+    background: #add8e6; /* light blue */
+}
+  
+#yellow {
+    background: #ffffcc; /* light yellow */
+}
+  
+#purple {
+    background: #d8b4e2; /* lavender */
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //all events in js are run sequentially except a few
+    //instead of using a document.getElement, we shouls use eventListeners
+    //ex: document.getElementById('owl').addEventListener('click', function(){alert("owl clicked") }, false)
+
+      //event propogation( yje false in the document.getElement line)
+    // it has 2 context, event bubblong , event capturing
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul")
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // when we add this no bubling takes place that is the output of the event above it is not shown
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     console.log("google clicked");
+        
+    // }, false)
+    // both codes are same but target id's are diff
+
+    //this is an example of bubbling, first the lower code is executed and then the ones abouve it like a bubble rises up from the bottom, here when we click on the owl picture well get output as "owl clicked" first and then "clicked inside ul"
+    // if we replace the false by true, we get the capturing mode in this the codes are executed from above so we will get the output in the reverse order to that of the bubbling mode
+
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey
+
+    //to target the hwole ul so that we can select all the images, here i dont have images as the links were pretty long to write the ones chai our code used so just writing the codes to understand
+    //document.querySelector('#images')addEventListener('click', function(e){
+        //console.log(e.target.tagName);
+        // if(e.target.tagName === 'IMG'){
+        //     console.log(e.target.id);
+        // }
+        //console.log(e.target.parentNode); // this will give us the parent node of the target , we will get the li of the elements we click on
+        //let removeIt = e.target.parentNode
+        //removeIt.remove()
+        //or
+        //removeIt.parentNode.removeChild(removeIt)
+        //by doing this we can remove the elements by clicking on them 
+    //})
+    
+    </script>
+
+    
+</body>
+</html>

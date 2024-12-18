@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code </title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langname){
+        const li = document.createElement('li')
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addOptimisedLanguage(langname){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptimisedLanguage('golang')
+
+    // whenever working large code use appendChild instead of innerHTML
+
+    //EDITING THESE VALUES
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML = "Mojo"
+    //2nd (bettter) approach
+    const newLi = document.createElement('li')
+    newLi.textContent = "mojo"
+    secondLang.replaceWith(newLi)
+
+    //edit 2
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    // remove
+    const lastLang = document.querySelector('li: last-child')
+    lastLang.remove()
+
+</script>
+</html>

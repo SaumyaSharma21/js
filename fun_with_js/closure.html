@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: black;">
+    <button id = "orange">Orange</button>
+    <button id = "green">Green</button>
+</body>
+    <script>
+        // function init(){
+        //     let name = " Mozilla";
+        //     function displayName(){
+        //         console.log(name);
+        //     }
+        //     displayName();
+        // }
+        // init()
+        // LEXICAL SCOPING : init creates a local variable called name and a function called displayNAme , the displayNAme function is an inner function that is defined inside init and is availaible only within the body of init function, note that the displayFunction has no local variables of the outer function, displayName can access variable name declared in the parent function
+
+        // function outer (){
+        //     let username = "saumya"
+        //     console.log(secret); // child can have the access of the parent function but the parents cannot and neither can siblings have the access to each other,s properties
+        //     function inner(){
+        //         let secret = "my123"
+        //         console.log("inner",username);
+        //     }
+        //     function innerTwo(){
+        //         console.log("innerTwo", username);
+        //         console.log(secret);
+        //     }
+        //     inner()
+        //     innerTwo()
+        // }
+        // outer()
+        // console.log("too outer",username);
+
+        // function makeFunc(){
+        //     const name = "mozilla";
+        //     function displayName(){
+        //         console.log(name);
+        //     }
+        //     return displayName
+        // }
+
+        // const myFunc = makeFunc(); //whole lexical scope of the parent functio is sent to the child instead of just the exexutional context 
+        // myFunc();
+
+    </script>
+    <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            //document.body.style.backgroundColor = `${color}`
+             return function (){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+     
+    </script>  
+
+</html>
